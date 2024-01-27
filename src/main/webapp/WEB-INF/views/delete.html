@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Delete Game</title>
+</head>
+<body>
+<h3>Remove Game</h3>
+<p>
+    <a th:href="@{/games}">
+        Back to game list
+    </a>
+</p>
+<div id="form">
+    <form action = "#" th:action="@{/games/delete}" th:object="${game}" method="post">
+        <input type="hidden" th:field="*{id}">
+        <label>
+            Name:
+            <input type="text" th:field="*{name}">
+        </label>
+        <label>
+            Image:
+            <input type="text" th:field="*{img}">
+        </label>
+        <label>
+            Release Date:
+            <input type="text" th:field="*{release_date}">
+        </label>
+        <label>
+            Price:
+            <input type="number" th:field="*{price}">
+        </label>
+        <label>
+            Description:
+            <input type="text" th:field="*{description}">
+        </label>
+        <input type="submit" value="delete">
+    </form>
+</div>
+</body>
+</html>
